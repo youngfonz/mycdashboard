@@ -5,6 +5,7 @@
 
     $browser = $xlsx->getSheetData('OS Browser Usage');
     $location = $xlsx->getSheetData('Chat Pivot');
+    $engagement_activity = $xlsx->getSheetData('Engagement');
 ?>
 
 <div class="section2">
@@ -41,11 +42,11 @@
                         <td class="col-md-2 row-channel">VIEWS</td>
                         <td class="col-md-3 row-channel">#OF CHATS</td>
                     </tr>
-                    <?php for($i=0; $i<4; $i++) { ?>
+                    <?php for($i=4; $i<8; $i++) { ?>
                         <tr>
-                            <td class="col-md-7 row-chat text-left"><?php echo $i+1 ?>. Optum Communication Town Hall</td>
-                            <td class="col-md-2 row-channel">456</td>
-                            <td class="col-md-3 row-channel">456</td>
+                            <td class="col-md-7 row-chat text-left"><?php echo $engagement_activity[$i][0] ?></td>
+                            <td class="col-md-2 row-channel"><?php echo $engagement_activity[$i][1] ?></td>
+                            <td class="col-md-3 row-channel"><?php echo $engagement_activity[$i][2] ?></td>
                         </tr>
                     <?php }?>
                 </table>
@@ -65,11 +66,11 @@
                         <td class="col-md-2 row-channel">VIEWS</td>
                         <td class="col-md-3 row-channel">#OF CHATS</td>
                     </tr>
-                    <?php for($i=0; $i<2; $i++) { ?>
+                    <?php for($i=17; $i<19; $i++) { ?>
                         <tr>
-                            <td class="col-md-7 row-chat"><?php echo $i+1 ?>. Optum Communication Town Hall</td>
-                            <td class="col-md-2 row-channel">456</td>
-                            <td class="col-md-3 row-channel">456</td>
+                            <td class="col-md-7 row-chat text-left"><?php echo $engagement_activity[$i][0] ?></td>
+                            <td class="col-md-2 row-channel"><?php echo $engagement_activity[$i][1] ?></td>
+                            <td class="col-md-3 row-channel"><?php echo $engagement_activity[$i][2] ?></td>
                         </tr>
                     <?php }?>
                 </table>

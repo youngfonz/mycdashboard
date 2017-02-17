@@ -17,9 +17,9 @@
         if($row[11] < $min)
             $min = $row[11];
 
-        if($row[11] > 0.2 )
+        if($row[11] >= 0.2 )
             $happy++;
-        else if(($row[11] >= 0)&&($row[11] <= 0.2))
+        else if(($row[11] >= 0)&&($row[11] < 0.2))
             $neutral++;
         else
             $unhappy++;
@@ -29,6 +29,8 @@
     $happy = $happy / count($data) * 100;
     $neutral = $neutral / count($data) * 100;
     $unhappy = $unhappy / count($data) * 100;
-    $arrayName = array('sent_score' => $sum/count($data), 'peak' => $max, 'low' => $min, 'happy' => $happy, 'neutral' => $neutral, 'unhappy' => $unhappy);
-    print_r(json_encode($arrayName));
+
+    $happy_scores = array('sent_score' => $sum/count($data), 'peak' => $max, 'low' => $min, 'happy' => $happy, 'neutral' => $neutral, 'unhappy' => $unhappy);
+
+    print_r(json_encode($happy_scores));
 ?>

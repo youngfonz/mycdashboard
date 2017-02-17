@@ -2,6 +2,8 @@ $(document).ready(function() {
   // Show/hide Sections
   $('.section-container').load('page/dashboard1.php .section1', function(){
     load_dashboard1();
+    debugger
+    $('.navbar-left').height($('.section-container').height() + 150);
   });
 
   $('#section1-a').click(function() {
@@ -14,6 +16,7 @@ $(document).ready(function() {
     $('#section3-a img').attr("src", "img/third.png");
     $('.section-container').load('page/dashboard1.php .section1', function(){
       load_dashboard1();
+      $('.navbar-left').height($('.section-container').height() + 150);
     });
   });
 
@@ -27,6 +30,7 @@ $(document).ready(function() {
     $('#section3-a img').attr("src", "img/third.png");
     $('.section-container').load('page/dashboard2.php', function() {
       load_dashboard2();
+      $('.navbar-left').height($('.section-container').height() + 150);
     });
   });
 
@@ -133,7 +137,6 @@ function load_dashboard1() {
         });
     }
   });
-  $('.navbar-left').height($('.section-container').height() + 150);
   $('.ignited-a').click(function() {
     $('.ignited-chats').show();
     $('.ignited-a').addClass("active");
@@ -150,9 +153,8 @@ function load_dashboard1() {
 }
 
 function load_dashboard2() {
-  $('.navbar-left').height($('.section-container').height() + 150);
   $.get({
-    url: "read_excel.php",
+    url: "dashboard2_scores.php",
     dataType: "JSON",
     success: function(result) {
       $('#digit-user').numerator({
