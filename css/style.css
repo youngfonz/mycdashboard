@@ -1,0 +1,609 @@
+/* Common Classes */
+body {
+  background-color: rgb(245, 245, 246);
+}
+
+.font-grey {
+  color: rgb(165, 171, 180);
+}
+
+.div-right {
+  float: right;
+}
+
+.div-left {
+  float: left;
+}
+
+.font-size-16 {
+  font-size: 16px;
+}
+
+.font-size-12 {
+  font-size: 12px;
+}
+
+.active-text {
+  color: rgb(255, 127, 0) !important;
+  border-left: solid 2px;
+}
+
+/* CSS for Header Section */
+
+.row {
+  margin-right: 0px;
+}
+
+.logo-section {
+  width: 100%;
+  height: 64px;
+  background-color: rgb(50, 52, 57);
+  float: left;
+}
+
+.logo-img, .header-text  {
+  float: left;
+  padding: 13px 9px;
+  font-family: open sans;
+  color: white;
+}
+
+.logo-img:hover {
+  cursor: pointer;
+}
+
+.header-brand1 {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.header-brand2 {
+  font-size: 16px;
+}
+
+.header-brand3 {
+  font-size: 13px;
+  color: rgb(126, 130, 139);
+}
+
+.btn-yellow {
+  cursor: pointer;
+  background-color: rgb(255, 127, 0);
+  width: 160px;
+  font-size: 12px;
+  padding: 10px;
+  margin: 13px 9px;
+  color: white;
+}
+
+/* ---------------------- */
+/* CSS for Navigation Bar */
+
+.navbar-left {
+  position: absolute;
+  background-color: rgb(23, 25, 30);
+  width: 52px;
+}
+
+.navbar-list {
+  list-style: none;
+  padding: 0;
+}
+
+.navbar-item{
+  width: 52px;
+  height: 52px;
+  padding: 7px;
+}
+
+.navbar-item .logo-img {
+  display: inline-flex;
+  height: 45px;
+  color: rgb(130, 130, 130);
+}
+.navbar-item img {
+  width: 18px;
+  height: 14px;
+}
+.navbar-item span {
+  margin-left: 25px;
+  display: none;
+}
+
+.navbar-list .navbar-activator {
+  padding-bottom: 100px;
+}
+
+.section-container {
+  padding: 20px 50px 10px 100px;
+}
+
+.heading {
+  height: 58px;
+}
+
+.heading-score {
+  width: 92%;
+  border-bottom: 1px solid rgb(165, 171, 180);
+}
+
+.yello-text {
+  color: rgb(255, 127, 0);
+  font-size: 15px;
+}
+
+.div-left strong {
+  font-size: 24px;
+}
+
+.sentiment-score {
+  font-size: 20px;
+}
+
+.sentiment-help:hover {
+  cursor: pointer;
+}
+
+.div-right img {
+  vertical-align: initial;
+}
+
+.large-score {
+  font-size: 40px;
+}
+
+.chart {
+  margin-top: 30px;
+  height: 480px;
+  width: 98%;
+}
+
+.chart-area {
+  background: rgb(25, 25, 25);
+}
+
+.chart-board {
+  display: flex;
+}
+
+.chart-board > div {
+  background-color: rgb(50, 50, 50);
+  height: 80px;
+  padding: 20px 0 0 10px;
+  margin: 40px 0.5% 20px 0.5%;
+  color: white;
+}
+
+.chart-board img {
+  float: left;
+}
+
+.sentiment-peak, .sentiment-low {
+  width: 23%;
+  display: inline-block;
+  font-size: 14px;
+}
+
+.sentiment-peak > div, .sentiment-low > div {
+  width: 100px;
+  position: absolute;
+  padding-left: 46px;
+}
+
+.peak-score, .low-score {
+  font-size: 37px;
+  float:right;
+  margin-top: 7px;
+}
+
+.emoji-break {
+  display: inline-block;
+  width: 50%;
+  color: white;
+  font-size: 14px;
+}
+
+.emoji-break > div:first-child {
+  vertical-align: top;
+  margin-top: 12px;
+}
+
+.emoji-break > div {
+  padding: 0 5px;
+  margin: 0 0.5%;
+  width: 23%;
+  display: inline-block;
+}
+
+.emoji-break > div > span {
+  font-size: 24px;
+}
+
+.border-green {
+  border-bottom: 1px solid green;
+}
+
+.border-nor {
+  border-bottom: 1px solid white;
+}
+
+.border-red {
+  border-bottom: 1px solid red;
+}
+
+#tooltip {
+  display: none;
+  position: absolute;
+}
+
+.part2 {
+  padding-left: 30px;
+}
+
+.list-header {
+  margin-top: 30px;
+  padding: 0;
+}
+
+.list-header .col-md-12 {
+  background-color: white;
+  padding: 15px 5px 0 20px;
+  border-bottom: 1px solid rgb(235, 235, 235);
+  height: 71px;
+}
+
+.list-header .font-size-16 {
+  margin: 10px 10px;
+  padding-bottom: 10px;
+  float:left;
+}
+
+.list-header .font-size-16:hover {
+  cursor: pointer;
+}
+
+.active {
+  border-bottom: 3px solid rgb(255, 127, 0);
+}
+
+.list-body {
+  background-color: rgb(250, 250, 250);
+  padding: 0;
+}
+
+.chat-header {
+  background-color: white;
+  padding: 20px 15px 10px 20px;
+}
+
+.time {
+  color: rgb(165, 171, 180);
+}
+
+.chat-body {
+  padding: 0px 0 10px 0px;
+  background-color: rgb(250, 250, 250);
+}
+
+.chat-body table {
+  table-layout: fixed;
+  width: 100%;
+  word-wrap: break-word;
+}
+
+.sparked-chats {
+  display: none;
+}
+
+.chat-body {
+  height: 300px;
+  overflow-x: scroll;
+}
+.chat-body tr td:first-child {
+  padding-left: 30px;
+}
+
+.chat-body tr td:last-child {
+  padding-right: 25px;
+}
+
+.chat-body tr {
+  padding: 10px;
+  height: 40px;
+  border-bottom: 1px solid rgb(235, 235, 235);
+}
+
+.chat-body td {
+  vertical-align: top;
+  padding-top: 15px;
+}
+
+.email-format {
+  font-weight: bold;
+}
+
+/* Section 2 */
+
+.section2 .heading-score {
+  width: 100%;
+}
+
+.part2 {
+  padding-right: 30px;
+  margin-top: 30px;
+}
+
+.dash-panel {
+  background-color: rgb(25, 25, 25);
+  padding: 20px 10px;
+}
+
+.digit-panel {
+  padding: 10px;
+  width: 19.2%;
+  height: 80px;
+  margin: 1% 0.4% 0 0.4%;
+  background-color: rgb(55, 55, 55);
+  color: rgb(130, 130, 130);
+  float:left;
+}
+
+.digit-panel span, .digit-panel-large span {
+  float: right;
+  font-size: 40px;
+  color: white;
+  margin-top: 20px;
+}
+
+.digit-panel-large {
+  padding: 10px;
+  width: 38.9%;
+  height: 80px;
+  margin: 1% 0.5% 0 0.5%;
+  background-color: rgb(55, 55, 55);
+  float:left;
+  color: rgb(130, 130, 130);
+}
+
+.panel-title {
+  position: absolute;
+}
+
+.section3 .heading-score {
+  width: 100%;
+}
+
+.section3 .part2, .recommend-list {
+  padding: 10px;
+}
+
+.section3 .part2 ol {
+  height: 680px;
+}
+
+li.recommend-list::after {
+  content: "";
+  position: absolute;
+  margin-top: 35px;
+  left: 22px;
+  width: 75px;
+  border-top: 3px solid @base-red;
+}
+
+@media (max-width: 1350px) {
+  .panel-title{
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 1050px) {
+  .emoji-break {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 991px) {
+  .section-container {
+    padding: 20px 0 10px 60px;
+  }
+
+  .chart {
+    width: 96%;
+  }
+
+  .sentiment-peak, .sentiment-low {
+    font-size: 12px;
+  }
+
+  .peak-score, .low-score {
+    font-size: 30px;
+    margin-top: 16px;
+  }
+
+  .dash-panel {
+    height: 310px;
+  }
+
+  .digit-panel span, .digit-panel-large span {
+    font-size: 35px;
+  }
+}
+
+@media (max-width: 768px) {
+  .btn-yellow {
+    width: 40px;
+    background-image: url("../img/av.png");
+    background-size: cover;
+    margin-right: 0;
+    height: 35px;
+  }
+
+  .btn-yellow strong {
+    display: none;
+  }
+  .navbar-left {
+    width: 30px;
+  }
+
+  .navbar-item {
+    padding: 3px;
+  }
+
+  .navbar-item img {
+    width: 15px;
+    height: 11px;
+    padding-left: 3px;
+  }
+  .navbar-item span{
+    margin-top:-2px;
+    margin-left: 10px;
+    font-size: 13px;
+  }
+  .navbar-item .logo-img {
+    height: 36px;
+    width: 100%;
+  }
+
+  .logo-img {
+    padding: 13px 1px;
+  }
+  .section-container {
+    padding: 10px 0 10px 20px;
+  }
+
+  .part1, .part2 {
+    padding-right: 10px;
+    padding-left: 0;
+    margin-left: 15px;
+  }
+
+  .part2 {
+    margin-left: 30px;
+  }
+
+  .large-score {
+    font-size: 20px
+  }
+
+  .sentiment-score, .yello-text {
+    font-size: 10px;
+  }
+
+  .sentiment-help img {
+    height: 12px;
+  }
+
+  .emotion {
+    height: 30px;
+    width: 20px;
+  }
+
+  .div-left strong {
+    font-size: 12px;
+  }
+
+  .div-right .font-grey {
+    font-size: 9px;
+  }
+
+  .chart {
+    width: 96%;
+    margin-top: 10px;
+  }
+
+  .chart-board {
+    display: block;
+  }
+
+  .chart-area {
+    margin-left: 15px;
+  }
+
+  .chart-board > div {
+    margin-top: 15px;
+  }
+
+  .chart-board .emoji-break {
+    display: block;
+    padding-top: 15px;
+  }
+
+  .emoji-break {
+    font-size: 8px;
+    width: 100%;
+    display: block;
+  }
+
+  .sentiment-peak, .sentiment-low {
+    display: block;
+    width: 100%;
+  }
+
+  .list-header {
+    margin-top: 10px;
+  }
+
+  .list-header .font-size-16 {
+    font-size: 12px;
+  }
+
+  .chat-body tr td:last-child, .chat-body tr td:first-child {
+    padding: 3px;
+  }
+
+  .chat-body tr {
+    font-size: 8px;
+  }
+
+  .chat-body td {
+    padding: 3px;
+  }
+
+  .row-time {
+    width: 10%;
+  }
+  .row-chat {
+    width: 40%;
+  }
+  .row-channel {
+    width: 16%;
+  }
+  .row-video {
+    width: 24%;
+  }
+  .row-sentiment {
+    width: 10%;
+  }
+
+  .section2 .part1 .heading, .section2 .part1 .col-md-6 {
+    padding-right: 0px;
+  }
+
+  .dash-panel {
+    height: 620px;
+  }
+
+  .digit-panel span, .digit-panel-large span {
+    margin-top: 25px;
+    font-size: 27px;
+  }
+
+  .digit-panel, .digit-panel-large {
+    width: 49%;
+  }
+
+  .panel-title {
+    font-size: 10px;
+  }
+
+  .section3 {
+    padding-right: 10px;
+  }
+  .section2 .part3 .col-md-4 {
+    padding-right: 0;
+  }
+
+  .section3 .part2 ol {
+    height: auto;
+  }
+}

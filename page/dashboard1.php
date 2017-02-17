@@ -1,0 +1,137 @@
+<div class="section1">
+    <div class="part1 col-md-12">
+        <div class="heading col-md-12">
+            <div class="heading-score div-left">
+                <div class="div-left">
+                    <span class="yello-text">SECTION 1.</span>
+                    <br/>
+                    <strong>SENTIMENT</strong>
+                </div>
+                <div class="div-right">
+                    <span class="large-score">0</span>
+                </div>
+                <div class="div-right">
+                    <span class="sentiment-score">SENTIMENT SCORE</span>
+                    <a href="#" class="sentiment-help"><img src="img/help.png"/></a>
+                    <br/>
+                    <span class="font-grey">On a scale of -1 to 1</span>  
+                </div>
+            </div>
+            <div class="div-right emotion">
+                <img src="img/emotion-1.png" />
+            </div>
+        </div>
+        <div class="chart-area col-md-12">
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#chart1">Viewers</a></li>
+                <li><a data-toggle="tab" href="#chart2">Chats</a></li>
+                <li><a data-toggle="tab" href="#chart3">Emoji</a></li>
+            </ul>
+
+            <div class="tab-content">
+                <div id="chart1" class="tab-pane fade in active">
+                    <h3>Viewers</h3>
+                    <canvas id="viewerchart" class="chart col-md-12"></canvas>
+                </div>
+                <div id="chart2" class="tab-pane fade">
+                    <h3>Chats</h3>
+                    <canvas id="chatchart" class="chart col-md-12"></canvas>
+                </div>
+                <div id="chart3" class="tab-pane fade">
+                    <h3>Emoji</h3>
+                    <canvas id="emojichart" class="chart col-md-12"></canvas>
+                </div>
+            </div>
+            <div class="chart-board col-md-12">
+                <div class="col-md-3 sentiment-peak">
+                    <img src="img/emotion-1.png">
+                    <div>SENTIMENT PEAK</div>
+                    <span class="peak-score border-green">0</span>
+                </div>
+                <div class="col-md-3 sentiment-low">
+                    <img src="img/emotion-2.png">
+                    <div>SENTIMENT LOW</div>
+                    <span class="low-score border-red">0</span>
+                </div>
+                <div class="col-md-6 emoji-break">
+                    <div class="col-md-3">EMOJI BREAKDOWN</div>
+                    <div class="col-md-3 text-center border-green">
+                        HAPPY<br><span class="happy-score">0</span>%
+                    </div>
+                    <div class="col-md-3 text-center border-nor">
+                        NEUTRAL<br><span class="neutral-score">0</span>%
+                    </div>
+                    <div class="col-md-3 text-center border-red">
+                        NOT HAPPY<br><span class="nothappy-score">0</span>%
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="tooltip">
+            <span>
+                @javier.sampedro
+            </span>
+            <span>
+                If you have questions during the town hall, start asking them. We will ask them during the Q&A time
+            </span>
+        </div>
+    </div>
+
+    <div class="part2 col-md-12">
+        <div class="list-header col-md-12">
+            <div class="col-md-12">
+                <div class="font-size-16 active ignited-a">IGNITED CHATS</div>
+                <div class="font-size-16 sparked-a">SPARKED CHATS</div>
+            </div>
+        </div>
+        <div class="list-body col-md-12">
+            <div class="chat-body col-md-12 ignited-chats">
+                <table class="font-size-12 col-md-12">
+                    <tr class="table-header chat-header">
+                        <td class="col-md-1 row-time">TIME</th>
+                        <td class="col-md-5 row-chat">USER CHATS</th>
+                        <td class="col-md-2 row-channel">CHANNEL</th>
+                        <td class="col-md-3 row-video">VIDEOS</th>
+                        <td class="col-md-1 row-sentiment">SENTIMENT</th>
+                    </tr>
+                    <?php for($i=0; $i<4; $i++) { ?>
+                        <tr>
+                            <td class="col-md-1 time">02:45</td>
+                            <td class="col-md-5">
+                                <p class="email-format">@thomas.mitchell1ATOptumdotcom</p>
+                                <p class="normal-format">I love optum so much. Best company I have ever worked at in my whole life. Everything on Optum.tv is amazing and I can relate to. Please with sugar on top produce more videos.</p>
+                            </td>
+                            <td class="col-md-2">Communications</td>
+                            <td class="col-md-3">Communications Town Hall Live Stream</td>
+                            <td class="col-md-1">0.851</td>
+                        </tr>
+                    <?php }?>
+                </table>
+            </div>
+
+            <div class="chat-body col-md-12 sparked-chats">
+                <table class="font-size-12 col-md-12">
+                    <tr class="table-header chat-header">
+                        <td class="col-md-1 row-time">TIME</th>
+                        <td class="col-md-5 row-chat">USER CHATS</th>
+                        <td class="col-md-2 row-channel">CHANNEL</th>
+                        <td class="col-md-3 row-video">VIDEOS</th>
+                        <td class="col-md-1 row-sentiment">SENTIMENT</th>
+                    </tr>
+                    <?php for($i=0; $i<4; $i++) { ?>
+                        <tr>
+                            <td class="col-md-1 time">02:45</td>
+                            <td class="col-md-5">
+                                <p class="email-format">@thomas.mitchell1ATOptumdotcom</p>
+                                <p class="normal-format">I love optum so much. Best company I have ever worked at in my whole life. Everything on Optum.tv is amazing and I can relate to. Please with sugar on top produce more videos.</p>
+                            </td>
+                            <td class="col-md-2">Communications</td>
+                            <td class="col-md-3">Communications Town Hall Live Stream</td>
+                            <td class="col-md-1">0.851</td>
+                        </tr>
+                    <?php }?>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
