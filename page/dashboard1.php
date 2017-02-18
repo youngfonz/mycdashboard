@@ -23,22 +23,22 @@
         </div>
         <div class="chart-area col-md-12">
             <ul class="nav nav-tabs">
-                <li class="active"><a data-toggle="tab" href="#chart1">Viewers</a></li>
+                <li class="active"><a data-toggle="tab" href="#chart1">Emoji Sentiment</a></li>
                 <li><a data-toggle="tab" href="#chart2">Chats</a></li>
                 <li><a data-toggle="tab" href="#chart3">Emoji</a></li>
             </ul>
 
             <div class="tab-content">
                 <div id="chart1" class="tab-pane fade in active">
-                    <h3>Viewers</h3>
-                    <canvas id="viewerchart" class="chart col-md-12"></canvas>
+                    <h3>Emoji Sentiment</h3>
+                    <canvas id="emoji_delta" class="chart col-md-12"></canvas>
                 </div>
                 <div id="chart2" class="tab-pane fade">
                     <h3>Chats</h3>
                     <canvas id="chatchart" class="chart col-md-12"></canvas>
                 </div>
                 <div id="chart3" class="tab-pane fade">
-                    <h3>Emoji</h3>
+                    <h3>Emojis</h3>
                     <canvas id="emojichart" class="chart col-md-12"></canvas>
                 </div>
             </div>

@@ -2,8 +2,7 @@ $(document).ready(function() {
   // Show/hide Sections
   $('.section-container').load('page/dashboard1.php .section1', function(){
     load_dashboard1();
-    debugger
-    $('.navbar-left').height($('.section-container').height() + 150);
+    $('.navbar-left').height($('body').height() + 150);
   });
 
   $('#section1-a').click(function() {
@@ -53,13 +52,13 @@ $(document).ready(function() {
       $('.navbar-item span').hide();
       if (($(document).width() > 768) && ($(document).width() < 991)) {
         $('.navbar-left').animate({width: "52"}, 500);
-        $('.section-container').animate({padding:"20px 0px 10px 60px"}, 500, function(){chart_load();});
+        $('.section-container').animate({padding:"20px 0px 10px 60px"}, 500);
       } else if ($(document).width() < 768) {
         $('.navbar-left').animate({width: "30"}, 500);
-        $('.section-container').animate({padding:"20px 0px 10px 20px"}, 500, function(){chart_load();});
+        $('.section-container').animate({padding:"20px 0px 10px 20px"}, 500);
       } else {
         $('.navbar-left').animate({width: "52"}, 500);
-        $('.section-container').animate({padding:"20px 50px 10px 100px"}, 500, function(){chart_load();});
+        $('.section-container').animate({padding:"20px 50px 10px 100px"}, 500);
       }
     }
     else {
@@ -67,13 +66,13 @@ $(document).ready(function() {
       $('.navbar-item span').show();
       if (($(document).width() > 768) && ($(document).width() < 991)) {
         $('.navbar-left').animate({width: "200"}, 500);
-        $('.section-container').animate({padding:"20px 0px 10px 190px"}, 500, function(){chart_load();});
+        $('.section-container').animate({padding:"20px 0px 10px 190px"}, 500);
       } else if ($(document).width() < 768) {
         $('.navbar-left').animate({width: "160"}, 500);
-        $('.section-container').animate({padding:"20px 0px 10px 150px"}, 500, function(){chart_load();});
+        $('.section-container').animate({padding:"20px 0px 10px 150px"}, 500);
       } else {
         $('.navbar-left').animate({width: "200"}, 500);
-        $('.section-container').animate({padding:"20px 50px 10px 250px"}, 500, function(){chart_load();});
+        $('.section-container').animate({padding:"20px 50px 10px 250px"}, 500);
       }
     }
   });
@@ -82,7 +81,7 @@ $(document).ready(function() {
 // Get information from Ajax and animate numbers
 
 function load_dashboard1() {
-  chart_load();
+  chart_load("1");
 
   $.get({
     url: "dashboard1_scores.php",
@@ -153,6 +152,7 @@ function load_dashboard1() {
 }
 
 function load_dashboard2() {
+  chart_load("2");
   $.get({
     url: "dashboard2_scores.php",
     dataType: "JSON",
