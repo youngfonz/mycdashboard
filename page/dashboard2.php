@@ -29,13 +29,6 @@
             </div>
         </div>
 
-        <div class="chart-area col-md-12">
-            <div id="chart1" class="tab-pane fade in active">
-                <h3>Viewers</h3>
-                <canvas id="view_chart" class="chart col-md-12"></canvas>
-            </div>
-        </div>
-
         <div class="col-md-6">
             <div class="list-header col-md-12">
                 <div class="col-md-12">
@@ -84,7 +77,15 @@
             </div>
         </div>
     </div>
+
     <div class="part2 col-md-12">
+        <div class="chart-area">
+            <div id="chart1" class="tab-pane fade in active">
+                <h3>Viewers</h3>
+                <canvas id="view_chart" class="chart col-md-12"></canvas>
+            </div>
+        </div>
+        
         <div class="dash-panel col-md-12">
             <div>
                 <div class="digit-panel col-md-3">

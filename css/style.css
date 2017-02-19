@@ -519,6 +519,10 @@ li.recommend-list::after {
     margin-left: 15px;
   }
 
+  .section2 .chart-area {
+    margin-left: 0;
+  }
+
   .chart-board > div {
     margin-top: 15px;
   }
