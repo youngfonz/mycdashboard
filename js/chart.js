@@ -195,11 +195,11 @@ function dashboard2_chart() {
         success: function(result){
             data_view = [];
             
-            // $.each(result, function(k,v){
-            //     if(k==0)
-            //         return true;
-            //     data_view.push({x: v[0], y: v[2]});
-            // });
+            $.each(result, function(k,v){
+                if(k==0)
+                    return true;
+                data_view.push({x: v[0], y: v[2]});
+            });
             
             var scatterChart = new Chart(ctx_view, {
                 type: 'line',
