@@ -10,7 +10,13 @@
     $happy = 0;
     $neutral = 0;
     $unhappy = 0;
+    $sparked = array();
+    $ignited = array();
     foreach($data as $row) {
+        if($row[7] > 0)
+            array_push($sparked, $row);
+        if($row[8] > 0)
+            array_push($ignited, $row);
         $sum += $row[11];
         if($row[11] > $max)
             $max = $row[11];

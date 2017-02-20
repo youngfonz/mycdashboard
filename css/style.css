@@ -287,6 +287,8 @@ h3{
 .chat-body {
   padding: 0px 0 10px 0px;
   background-color: rgb(250, 250, 250);
+  height: 650px;
+  overflow: auto;
 }
 
 .chat-body table {
@@ -299,10 +301,6 @@ h3{
   display: none;
 }
 
-.chat-body {
-  height: 300px;
-  overflow-x: scroll;
-}
 .chat-body tr td:first-child {
   padding-left: 30px;
 }

@@ -4,7 +4,7 @@
     $xlsx = new XLSXReader('optum_stream_full.xlsx');
 
     $browser = $xlsx->getSheetData('OS Browser Usage');
-    $location = $xlsx->getSheetData('Chat Pivot');
+    $location = $xlsx->getSheetData('Chat Pivot');  
     $engagement_activity = $xlsx->getSheetData('Engagement');
 ?>
 
@@ -79,11 +79,9 @@
     </div>
 
     <div class="part2 col-md-12">
-        <div class="chart-area">
-            <div id="chart1" class="tab-pane fade in active">
-                <h3>Viewers</h3>
-                <canvas id="view_chart" class="chart col-md-12"></canvas>
-            </div>
+        <div class="chart-area col-md-12">
+            <h3>Viewers</h3>
+            <canvas id="view_chart" class="chart col-md-12"></canvas>
         </div>
         
         <div class="dash-panel col-md-12">

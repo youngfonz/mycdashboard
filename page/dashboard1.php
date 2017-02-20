@@ -1,3 +1,36 @@
+<?php
+    require_once '../reader.php';
+
+    $xlsx = new XLSXReader('optum_stream_full.xlsx');
+
+    $data = $xlsx->getSheetData('Raw Chats');
+    $sparked = array();
+    $ignited = array();
+    
+    foreach($data as $row) {
+        $row[3] = calc_time_diff($row);
+        if($row[6] > 0){
+            array_push($sparked, $row);
+        }
+        if($row[7] > 0) {
+            array_push($ignited, $row);
+        }
+    }
+
+    function calc_time_diff($row) {
+        $UNIX_DATE = ($row[3] - 25569) * 86400;
+        $start_date = gmdate("d-m-Y H:i:s", $UNIX_DATE);
+        $UNIX_DATE = ($row[4] - 25569) * 86400;
+        $end_date = gmdate("d-m-Y H:i:s", $UNIX_DATE);
+        $i = strtotime($end_date);
+        $j = strtotime($start_date);
+        $diff = $i-$j;
+        $sec = $diff % 60;
+        $min = ($diff - $sec) / 60;
+        return $min.":".$sec;
+    }
+?>
+
 <div class="section1">
     <div class="part1 col-md-12">
         <div class="heading col-md-12">
@@ -94,16 +127,16 @@
                         <td class="col-md-3 row-video">VIDEOS</th>
                         <td class="col-md-1 row-sentiment">SENTIMENT</th>
                     </tr>
-                    <?php for($i=0; $i<4; $i++) { ?>
+                    <?php for($i=0; $i<count($ignited); $i++) { ?>
                         <tr>
-                            <td class="col-md-1 time">02:45</td>
+                            <td class="col-md-1 time"><?php echo $ignited[$i][3];?></td>
                             <td class="col-md-5">
-                                <p class="email-format">@thomas.mitchell1ATOptumdotcom</p>
-                                <p class="normal-format">I love optum so much. Best company I have ever worked at in my whole life. Everything on Optum.tv is amazing and I can relate to. Please with sugar on top produce more videos.</p>
+                                <p class="email-format"><?php echo $ignited[$i][13]?></p>
+                                <p class="normal-format"><?php echo $ignited[$i][5]?></p>
                             </td>
                             <td class="col-md-2">Communications</td>
                             <td class="col-md-3">Communications Town Hall Live Stream</td>
-                            <td class="col-md-1">0.851</td>
+                            <td class="col-md-1"><?php echo $ignited[$i][11]?></td>
                         </tr>
                     <?php }?>
                 </table>
@@ -118,16 +151,16 @@
                         <td class="col-md-3 row-video">VIDEOS</th>
                         <td class="col-md-1 row-sentiment">SENTIMENT</th>
                     </tr>
-                    <?php for($i=0; $i<4; $i++) { ?>
+                    <?php for($i=0; $i<count($sparked); $i++) { ?>
                         <tr>
-                            <td class="col-md-1 time">02:45</td>
+                            <td class="col-md-1 time"><?php echo $sparked[$i][3]?></td>
                             <td class="col-md-5">
-                                <p class="email-format">@thomas.mitchell1ATOptumdotcom</p>
-                                <p class="normal-format">I love optum so much. Best company I have ever worked at in my whole life. Everything on Optum.tv is amazing and I can relate to. Please with sugar on top produce more videos.</p>
+                                <p class="email-format"><?php echo $sparked[$i][13]?></p>
+                                <p class="normal-format"><?php echo $sparked[$i][5]?></p>
                             </td>
                             <td class="col-md-2">Communications</td>
                             <td class="col-md-3">Communications Town Hall Live Stream</td>
-                            <td class="col-md-1">0.851</td>
+                            <td class="col-md-1"><?php echo $ignited[$i][11]?></td>
                         </tr>
                     <?php }?>
                 </table>
