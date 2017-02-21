@@ -3,6 +3,10 @@ body {
   background-color: rgb(245, 245, 246);
 }
 
+.container-fluid {
+  padding-right: 0;
+}
+
 h3{
   color: #ffffff;
 }
@@ -35,7 +39,7 @@ h3{
 /* CSS for Header Section */
 
 .row {
-  margin-right: 0px;
+  margin: 0;
 }
 
 .logo-section {
@@ -43,6 +47,8 @@ h3{
   height: 64px;
   background-color: rgb(50, 52, 57);
   float: left;
+  z-index: 1000;
+  position: fixed;
 }
 
 .logo-img, .header-text  {
@@ -84,9 +90,13 @@ h3{
 /* CSS for Navigation Bar */
 
 .navbar-left {
-  position: absolute;
+  position: fixed;
+  height: 100vh;
+  top: 0px;
   background-color: rgb(23, 25, 30);
   width: 52px;
+  left: 0px;
+  padding-top: 80px;
 }
 
 .navbar-list {
@@ -119,7 +129,9 @@ h3{
 }
 
 .section-container {
-  padding: 20px 50px 10px 100px;
+  padding: 80px 0;
+  width: 95%;
+  left: 52px;
 }
 
 .heading {
@@ -158,8 +170,7 @@ h3{
 
 .chart {
   padding-top: 30px;
-  height: 480px;
-  width: 98%;
+  height: 580px !important;
   background: rgb(25, 25, 25);
 }
 
@@ -298,8 +309,8 @@ h3{
   word-wrap: break-word;
 }
 
-.section2 .chat-body {
-  height: 300px;
+.chat-recent {
+  height: auto;
 }
 
 .sparked-chats {
@@ -331,7 +342,7 @@ h3{
 
 /* Section 2 */
 
-.section2 .heading-score {
+.section1 .heading-score {
   width: 100%;
 }
 
@@ -411,7 +422,7 @@ li.recommend-list::after {
 
 @media (max-width: 991px) {
   .section-container {
-    padding: 20px 0 10px 60px;
+    left: 40px;
   }
 
   .chart {
@@ -474,8 +485,9 @@ li.recommend-list::after {
   .logo-img {
     padding: 13px 1px;
   }
+  
   .section-container {
-    padding: 10px 0 10px 20px;
+    left: 0;
   }
 
   .part1, .part2 {
@@ -526,7 +538,7 @@ li.recommend-list::after {
     margin-left: 15px;
   }
 
-  .section2 .chart-area {
+  .section1 .chart-area {
     margin-left: 0;
   }
 
@@ -586,7 +598,7 @@ li.recommend-list::after {
     width: 10%;
   }
 
-  .section2 .part1 .heading, .section2 .part1 .col-md-6 {
+  .section1 .part1 .heading, .section1 .part1 .col-md-6 {
     padding-right: 0px;
   }
 
@@ -610,7 +622,7 @@ li.recommend-list::after {
   .section3 {
     padding-right: 10px;
   }
-  .section2 .part3 .col-md-4 {
+  .section1 .part3 .col-md-4 {
     padding-right: 0;
   }
 

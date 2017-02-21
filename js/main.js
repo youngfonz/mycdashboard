@@ -2,7 +2,6 @@ $(document).ready(function() {
   // Show/hide Sections
   $('.section-container').load('page/dashboard1.php .section1', function(){
     load_dashboard1();
-    $('.navbar-left').height($('body').height() + 150);
   });
 
   $('#section1-a').click(function() {
@@ -10,12 +9,11 @@ $(document).ready(function() {
       $(this).removeClass('active-text');
     });
     $(this).addClass('active-text');
-    $('#section1-a img').attr("src", "img/first_selected.png");
-    $('#section2-a img').attr("src", "img/second.png");
+    $('#section1-a img').attr("src", "img/second_selected.png");
+    $('#section2-a img').attr("src", "img/first.png");
     $('#section3-a img').attr("src", "img/third.png");
     $('.section-container').load('page/dashboard1.php .section1', function(){
       load_dashboard1();
-      $('.navbar-left').height($('.section-container').height() + 150);
     });
   });
 
@@ -24,12 +22,11 @@ $(document).ready(function() {
       $(this).removeClass('active-text');
     });
     $(this).addClass('active-text');
-    $('#section1-a img').attr("src", "img/first.png");
-    $('#section2-a img').attr("src", "img/second_selected.png");
+    $('#section1-a img').attr("src", "img/second.png");
+    $('#section2-a img').attr("src", "img/first_selected.png");
     $('#section3-a img').attr("src", "img/third.png");
     $('.section-container').load('page/dashboard2.php', function() {
       load_dashboard2();
-      $('.navbar-left').height($('.section-container').height() + 150);
     });
   });
 
@@ -38,11 +35,11 @@ $(document).ready(function() {
       $(this).removeClass('active-text');
     });
     $(this).addClass('active-text');
-    $('#section1-a img').attr("src", "img/first.png");
-    $('#section2-a img').attr("src", "img/second.png");
+    $('#section1-a img').attr("src", "img/second.png");
+    $('#section2-a img').attr("src", "img/first.png");
     $('#section3-a img').attr("src", "img/third_selected.png");
     $('.section-container').load('page/dashboard3.php .section3', function() {
-      $('.navbar-left').height($('.section-container').height() + 150);
+      // $('.navbar-left').height($('body').height() + 0);
     });
   });
 
@@ -52,13 +49,13 @@ $(document).ready(function() {
       $('.navbar-item span').hide();
       if (($(document).width() > 768) && ($(document).width() < 991)) {
         $('.navbar-left').animate({width: "52"}, 500);
-        $('.section-container').animate({padding:"20px 0px 10px 60px"}, 500);
+        $('.section-container').animate({padding:"80px 0px 0px 0px"}, 500);
       } else if ($(document).width() < 768) {
         $('.navbar-left').animate({width: "30"}, 500);
-        $('.section-container').animate({padding:"20px 0px 10px 20px"}, 500);
+        $('.section-container').animate({padding:"80px 0px 10px 20px"}, 500);
       } else {
         $('.navbar-left').animate({width: "52"}, 500);
-        $('.section-container').animate({padding:"20px 50px 10px 100px"}, 500);
+        $('.section-container').animate({padding:"80px 50px 10px 100px"}, 500);
       }
     }
     else {
@@ -66,13 +63,13 @@ $(document).ready(function() {
       $('.navbar-item span').show();
       if (($(document).width() > 768) && ($(document).width() < 991)) {
         $('.navbar-left').animate({width: "200"}, 500);
-        $('.section-container').animate({padding:"20px 0px 10px 190px"}, 500);
+        $('.section-container').animate({padding:"80px 0px 10px 190px"}, 500);
       } else if ($(document).width() < 768) {
         $('.navbar-left').animate({width: "160"}, 500);
-        $('.section-container').animate({padding:"20px 0px 10px 150px"}, 500);
+        $('.section-container').animate({padding:"80px 0px 10px 150px"}, 500);
       } else {
         $('.navbar-left').animate({width: "200"}, 500);
-        $('.section-container').animate({padding:"20px 50px 10px 250px"}, 500);
+        $('.section-container').animate({padding:"80px 50px 10px 250px"}, 500);
       }
     }
   });
@@ -80,11 +77,11 @@ $(document).ready(function() {
 
 // Get information from Ajax and animate numbers
 
-function load_dashboard1() {
-  chart_load("1");
+function load_dashboard2() {
+  chart_load("2");
 
   $.get({
-    url: "dashboard1_scores.php",
+    url: "dashboard2_scores.php",
     dataType: "JSON",
     success: function(result){
        $('.large-score').numerator({
@@ -151,10 +148,10 @@ function load_dashboard1() {
   });
 }
 
-function load_dashboard2() {
-  chart_load("2");
+function load_dashboard1() {
+  chart_load("1");
   $.get({
-    url: "dashboard2_scores.php",
+    url: "dashboard1_scores.php",
     dataType: "JSON",
     success: function(result) {
       $('#digit-user').numerator({

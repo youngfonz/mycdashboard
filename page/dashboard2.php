@@ -3,9 +3,32 @@
 
     $xlsx = new XLSXReader('optum_stream_full.xlsx');
 
-    $browser = $xlsx->getSheetData('OS Browser Usage');
-    $location = $xlsx->getSheetData('Chat Pivot');  
-    $engagement_activity = $xlsx->getSheetData('Engagement');
+    $data = $xlsx->getSheetData('Raw Chats');
+    $sparked = array();
+    $ignited = array();
+    
+    foreach($data as $row) {
+        $row[3] = calc_time_diff($row);
+        if($row[6] > 0){
+            array_push($sparked, $row);
+        }
+        if($row[7] > 0) {
+            array_push($ignited, $row);
+        }
+    }
+
+    function calc_time_diff($row) {
+        $UNIX_DATE = ($row[3] - 25569) * 86400;
+        $start_date = gmdate("d-m-Y H:i:s", $UNIX_DATE);
+        $UNIX_DATE = ($row[4] - 25569) * 86400;
+        $end_date = gmdate("d-m-Y H:i:s", $UNIX_DATE);
+        $i = strtotime($end_date);
+        $j = strtotime($start_date);
+        $diff = $i-$j;
+        $sec = $diff % 60;
+        $min = ($diff - $sec) / 60;
+        return $min.":".$sec;
+    }
 ?>
 
 <div class="section2">
@@ -13,196 +36,131 @@
         <div class="heading col-md-12">
             <div class="heading-score div-left">
                 <div class="div-left">
-                    <span class="yello-text">SECTION 2.</span>
+                    <span class="yello-text">SECTION 1.</span>
                     <br/>
-                    <strong>ENGAGEMENT</strong>
+                    <strong>SENTIMENT</strong>
                 </div>
                 <div class="div-right">
-                    <span class="large-score">0</span>%
+                    <span class="large-score">0</span>
                 </div>
                 <div class="div-right">
-                    <span class="sentiment-score">ENGAGEMENT SCORE</span>
-                    <a href="#" class="engagement-help"><img src="img/help.png" /></a>
+                    <span class="sentiment-score">SENTIMENT SCORE</span>
+                    <a href="#" class="sentiment-help"><img src="img/help.png"/></a>
                     <br/>
-                    <span class="font-grey">On a scale of 1 to 100</span>  
+                    <span class="font-grey">On a scale of -1 to 1</span>  
+                </div>
+            </div>
+            <div class="div-right emotion">
+                <img src="img/emotion-1.png" />
+            </div>
+        </div>
+        <div class="chart-area col-md-12">
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#chart1">Emoji Sentiment</a></li>
+                <li><a data-toggle="tab" href="#chart2">Chats</a></li>
+                <li><a data-toggle="tab" href="#chart3">Emoji</a></li>
+            </ul>
+
+            <div class="tab-content">
+                <div id="chart1" class="tab-pane fade in active">
+                    <h3>Emoji Sentiment</h3>
+                    <canvas id="emoji_delta" class="chart col-md-12"></canvas>
+                </div>
+                <div id="chart2" class="tab-pane fade">
+                    <h3>Chats</h3>
+                    <canvas id="chatchart" class="chart col-md-12"></canvas>
+                </div>
+                <div id="chart3" class="tab-pane fade">
+                    <h3>Emojis</h3>
+                    <canvas id="emojichart" class="chart col-md-12"></canvas>
+                </div>
+            </div>
+            <div class="chart-board col-md-12">
+                <div class="col-md-3 sentiment-peak">
+                    <img src="img/emotion-1.png">
+                    <div>SENTIMENT PEAK</div>
+                    <span class="peak-score border-green">0</span>
+                </div>
+                <div class="col-md-3 sentiment-low">
+                    <img src="img/emotion-2.png">
+                    <div>SENTIMENT LOW</div>
+                    <span class="low-score border-red">0</span>
+                </div>
+                <div class="col-md-6 emoji-break">
+                    <div class="col-md-3">EMOJI BREAKDOWN</div>
+                    <div class="col-md-3 text-center border-green">
+                        HAPPY<br><span class="happy-score">0</span>%
+                    </div>
+                    <div class="col-md-3 text-center border-nor">
+                        NEUTRAL<br><span class="neutral-score">0</span>%
+                    </div>
+                    <div class="col-md-3 text-center border-red">
+                        NOT HAPPY<br><span class="nothappy-score">0</span>%
+                    </div>
                 </div>
             </div>
         </div>
-
-        <div class="col-md-6">
-            <div class="list-header col-md-12">
-                <div class="col-md-12">
-                    <div class="font-size-16">RECENT VIDEO ON DEMAND ACTIVITY</div>
-                </div>
-            </div>
-            <div class="chat-body col-md-12">
-                <table class="font-size-12 col-md-12 text-center">
-                    <tr class="chat-header">
-                        <td class="col-md-7 row-chat text-left">NAME OF VIDEO</td>
-                        <td class="col-md-2 row-channel">VIEWS</td>
-                        <td class="col-md-3 row-channel">#OF CHATS</td>
-                    </tr>
-                    <?php for($i=4; $i<8; $i++) { ?>
-                        <tr>
-                            <td class="col-md-7 row-chat text-left"><?php echo $engagement_activity[$i][0] ?></td>
-                            <td class="col-md-2 row-channel"><?php echo $engagement_activity[$i][1] ?></td>
-                            <td class="col-md-3 row-channel"><?php echo $engagement_activity[$i][2] ?></td>
-                        </tr>
-                    <?php }?>
-                </table>
-            </div>
-        </div>
-
-        <div class="col-md-6">
-            <div class="list-header col-md-12">
-                <div class="col-md-12">
-                    <div class="font-size-16">RECENT LIVE STREAM ACTIVITY</div>
-                </div>
-            </div>
-            <div class="chat-body col-md-12">
-                <table class="font-size-12 col-md-12 text-center">
-                    <tr class="chat-header">
-                        <td class="col-md-7 row-chat text-left">NAME OF VIDEO</td>
-                        <td class="col-md-2 row-channel">VIEWS</td>
-                        <td class="col-md-3 row-channel">#OF CHATS</td>
-                    </tr>
-                    <?php for($i=17; $i<19; $i++) { ?>
-                        <tr>
-                            <td class="col-md-7 row-chat text-left"><?php echo $engagement_activity[$i][0] ?></td>
-                            <td class="col-md-2 row-channel"><?php echo $engagement_activity[$i][1] ?></td>
-                            <td class="col-md-3 row-channel"><?php echo $engagement_activity[$i][2] ?></td>
-                        </tr>
-                    <?php }?>
-                </table>
-            </div>
+        <div id="tooltip">
+            <span>
+                @javier.sampedro
+            </span>
+            <span>
+                If you have questions during the town hall, start asking them. We will ask them during the Q&A time
+            </span>
         </div>
     </div>
 
     <div class="part2 col-md-12">
-        <div class="chart-area">
-            <div id="chart1" class="tab-pane fade in active">
-                <h3>Viewers</h3>
-                <canvas id="view_chart" class="chart col-md-12"></canvas>
+        <div class="list-header col-md-12">
+            <div class="col-md-12">
+                <div class="font-size-16 active ignited-a">IGNITED CHATS</div>
+                <div class="font-size-16 sparked-a">SPARKED CHATS</div>
             </div>
         </div>
-        
-        <div class="dash-panel col-md-12">
-            <div>
-                <div class="digit-panel col-md-3">
-                    <div class="panel-title">USERS</div>
-                    <span id="digit-user">0</span>
-                </div>
-                <div class="digit-panel col-md-3">
-                    <div class="panel-title">UNIQUE VIEWERS</div>
-                    <span id="digit-univie">0</span>
-                </div>
-                <div class="digit-panel col-md-3">
-                    <div class="panel-title"># OF VIDEO</div>
-                    <span id="digit-video">0</span>
-                </div>
-                <div class="digit-panel col-md-3">
-                    <div class="panel-title">PAGEVIEWS</div>
-                    <span id="digit-page">0</span>
-                </div>
-                <div class="digit-panel col-md-3">
-                    <div class="panel-title">PAGE/SESSIONS</div>
-                    <span id="digit-session">0</span>
-                </div>
-            </div>
-
-            <div>
-                <div class="digit-panel-large col-md-6">
-                    <div class="panel-title">AVG.SESSION DURATION</div>
-                    <span id="digit-avgsess">00:00:24</span>
-                </div>
-                <div class="digit-panel col-md-3">
-                    <div class="panel-title"># OF CHATS</div>
-                    <span id="digit-chat">0</span>
-                </div>
-                <div class="digit-panel col-md-3">
-                    <div class="panel-title">#OF USERS WHO CHATTED</div>
-                    <span id="digit-chatted">0</span>
-                </div>
-                <div class="digit-panel col-md-3">
-                    <div class="panel-title"># OF PINNED CHATS</div>
-                    <span id="digit-pinned">0</span>
-                </div>
-            </div>
-
-            <div>
-                <div class="digit-panel col-md-3">
-                    <div class="panel-title"># OF SHARES</div>
-                    <span id="digit-share">0</span>
-                </div>
-                <div class="digit-panel col-md-3">
-                    <div class="panel-title"># OF USERS WHO SPARKED</div>
-                    <span id="digit-sparked">0</span>
-                </div>
-                <div class="digit-panel col-md-3">
-                    <div class="panel-title"># OF SPARKS</div>
-                    <span id="digit-spark">0</span>
-                </div>
-                <div class="digit-panel col-md-3">
-                    <div class="panel-title"># OF ADMINS WHO IGNITED</div>
-                    <span id="digit-ignited">0</span>
-                </div>
-                <div class="digit-panel col-md-3">
-                    <div class="panel-title"># OF IGNITES</div>
-                    <span id="digit-ignit">0</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="part3 col-md-12">
-        <div class="col-md-8">
-            <div class="list-header col-md-12">
-                <div class="col-md-12">
-                    <div class="font-size-16">BROWSER</div>
-                </div>
-            </div>
-
-            <div class="chat-body col-md-12">
+        <div class="list-body col-md-12">
+            <div class="chat-body col-md-12 ignited-chats">
                 <table class="font-size-12 col-md-12">
-                    <tr class="chat-header">
-                        <td class="col-md-2">OS</td>
-                        <td class="col-md-2 text-right">OS_VER</td>
-                        <td class="col-md-3 row-video text-right">BROWSER</td>
-                        <td class="col-md-3 row-video text-right">BROWSER_VER</td>
-                        <td class="col-md-2 row-video text-right">USER_COUNT</td>
+                    <tr class="table-header chat-header">
+                        <td class="col-md-1 row-time">TIME</th>
+                        <td class="col-md-5 row-chat">USER CHATS</th>
+                        <td class="col-md-2 row-channel">CHANNEL</th>
+                        <td class="col-md-3 row-video">VIDEOS</th>
+                        <td class="col-md-1 row-sentiment">SENTIMENT</th>
                     </tr>
-                    <?php for($i = 1; $i < count($browser); $i++) { ?>
+                    <?php for($i=0; $i<count($ignited); $i++) { ?>
                         <tr>
-                            <td class="col-md-2"><?php echo $browser[$i][0]?></td>
-                            <td class="col-md-2 text-right"><?php echo $browser[$i][1]?></td>
-                            <td class="col-md-3 row-video text-right"><?php echo $browser[$i][2];?></td>
-                            <td class="col-md-3 row-video text-right"><?php echo $browser[$i][3];?></td>
-                            <td class="col-md-2 row-video text-right"><?php echo $browser[$i][4];?></td>
+                            <td class="col-md-1 time"><?php echo $ignited[$i][3];?></td>
+                            <td class="col-md-5">
+                                <p class="email-format"><?php echo $ignited[$i][13]?></p>
+                                <p class="normal-format"><?php echo $ignited[$i][5]?></p>
+                            </td>
+                            <td class="col-md-2">Communications</td>
+                            <td class="col-md-3">Communications Town Hall Live Stream</td>
+                            <td class="col-md-1"><?php echo $ignited[$i][11]?></td>
                         </tr>
                     <?php }?>
                 </table>
             </div>
-        </div>
 
-        <div class="col-md-4">
-            <div class="list-header col-md-12">
-                <div class="col-md-12">
-                    <div class="font-size-16">LOCATION</div>
-                </div>
-            </div>
-
-            <div class="chat-body col-md-12">
+            <div class="chat-body col-md-12 sparked-chats">
                 <table class="font-size-12 col-md-12">
-                    <tr class="chat-header">
-                        <td class="col-md-6">CITY</td>
-                        <td class="col-md-3">SESSIONS</td>
-                        <td class="col-md-3">%SESSIONS</td>
+                    <tr class="table-header chat-header">
+                        <td class="col-md-1 row-time">TIME</th>
+                        <td class="col-md-5 row-chat">USER CHATS</th>
+                        <td class="col-md-2 row-channel">CHANNEL</th>
+                        <td class="col-md-3 row-video">VIDEOS</th>
+                        <td class="col-md-1 row-sentiment">SENTIMENT</th>
                     </tr>
-                    <?php for($i = 1; $i < count($location); $i++) { ?>
+                    <?php for($i=0; $i<count($sparked); $i++) { ?>
                         <tr>
-                            <td class="col-md-6"><?php echo $i.$location[$i][1];?></td>
-                            <td class="col-md-3">72</td>
-                            <td class="col-md-3">36</td>
+                            <td class="col-md-1 time"><?php echo $sparked[$i][3]?></td>
+                            <td class="col-md-5">
+                                <p class="email-format"><?php echo $sparked[$i][13]?></p>
+                                <p class="normal-format"><?php echo $sparked[$i][5]?></p>
+                            </td>
+                            <td class="col-md-2">Communications</td>
+                            <td class="col-md-3">Communications Town Hall Live Stream</td>
+                            <td class="col-md-1"><?php echo $sparked[$i][11]?></td>
                         </tr>
                     <?php }?>
                 </table>

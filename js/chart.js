@@ -5,7 +5,7 @@ function chart_load(panel) {
         dashboard2_chart();
 }
 
-function dashboard1_chart() {
+function dashboard2_chart() {
     if(!$('#emoji_delta').length)
         return;
     var ctx_delta = $("#emoji_delta");
@@ -32,6 +32,7 @@ function dashboard1_chart() {
                     datasets: [{
                         label: 'Scatter Dataset',
                         borderColor: "rgb(150, 150, 150)",
+                        borderDash: [5,5],
                         pointBackgroundColor: "rgb(150, 150, 150)",
                         pointRadius: 10,
                         pointHoverBackgroundColor: "rgb(90, 180, 80)",
@@ -39,7 +40,6 @@ function dashboard1_chart() {
                         pointHoverBorderWidth: 10,
                         pointHoverRadius: 10,
                         pointStyle: 'rectRot',
-                        showLine: false,
                         data: data_delta,
                     }]
                 },
@@ -85,6 +85,7 @@ function dashboard1_chart() {
                     datasets: [{
                         label: 'Scatter Dataset',
                         borderColor: "rgb(150, 150, 150)",
+                        borderDash: [5,5],
                         pointBackgroundColor: "rgb(150, 150, 150)",
                         pointRadius: 10,
                         pointHoverBackgroundColor: "rgb(90, 180, 80)",
@@ -92,7 +93,6 @@ function dashboard1_chart() {
                         pointHoverBorderWidth: 10,
                         pointHoverRadius: 10,
                         pointStyle: 'rectRot',
-                        showLine: false,
                         data: data_chat,
                     }]
                 },
@@ -138,6 +138,7 @@ function dashboard1_chart() {
                     datasets: [{
                         label: 'Scatter Dataset',
                         borderColor: "rgb(150, 150, 150)",
+                        borderDash: [5,5],
                         pointBackgroundColor: "rgb(150, 150, 150)",
                         pointRadius: 10,
                         pointHoverBackgroundColor: "rgb(90, 180, 80)",
@@ -145,7 +146,6 @@ function dashboard1_chart() {
                         pointHoverBorderWidth: 10,
                         pointHoverRadius: 10,
                         pointStyle: 'rectRot',
-                        showLine: false,
                         data: data_emoji,
                     }]
                 },
@@ -184,7 +184,7 @@ function dashboard1_chart() {
     var tooltip = $('#tooltip');
 }
 
-function dashboard2_chart() {
+function dashboard1_chart() {
     if(!$('#view_chart').length)
         return;
     var ctx_view = $("#view_chart");
@@ -207,6 +207,7 @@ function dashboard2_chart() {
                     datasets: [{
                         label: 'Scatter Dataset',
                         borderColor: "rgb(150, 150, 150)",
+                        borderDash: [4,5],
                         pointBackgroundColor: "rgb(150, 150, 150)",
                         pointRadius: 10,
                         pointHoverBackgroundColor: "rgb(90, 180, 80)",
@@ -214,7 +215,6 @@ function dashboard2_chart() {
                         pointHoverBorderWidth: 10,
                         pointHoverRadius: 10,
                         pointStyle: 'rectRot',
-                        showLine: false,
                         data: data_view,
                     }]
                 },

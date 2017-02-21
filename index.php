@@ -42,35 +42,41 @@
     </div>
 
 <!-- Left Navigation Bar -->
-    <div class="navbar-left">
-        <ul class="navbar-list nav">
-            <li class="navbar-activator navbar-item">
-                <div href="#" class="logo-img">
-                    <img src="img/activator.png" />
-                </div>
-            </li>
-            <li class="navbar-item">
-                <div class="logo-img active-text" id="section1-a">
-                    <img src="img/first_selected.png" />
-                    <span>SENTIMENT</span>
-                </div>
-            </li>
-            <li class="navbar-item">
-                <div class="logo-img"  id="section2-a">
-                    <img src="img/second.png" />
-                    <span>ENGAGEMENT</span>
-                </div>
-            </li>
-            <li class="navbar-item">
-                <div class="logo-img"  id="section3-a">
-                    <img src="img/third.png" />
-                    <span>RECOMMENDATION</span>
-                </div>
-            </li>
-        </ul>
-    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3 col-lg-2">
+                <nav class="navbar navbar-left">
+                    <ul class="navbar-list">
+                        <li class="navbar-activator navbar-item">
+                            <div href="#" class="logo-img">
+                                <img src="img/activator.png" />
+                            </div>
+                        </li>
+                        <li class="navbar-item active-text">
+                            <div class="logo-img"  id="section1-a">
+                                <img src="img/second_selected.png" />
+                                <span>ENGAGEMENT</span>
+                            </div>
+                        </li>
+                        <li class="navbar-item">
+                            <div class="logo-img" id="section2-a">
+                                <img src="img/first.png" />
+                                <span>SENTIMENT</span>
+                            </div>
+                        </li>
+                        <li class="navbar-item">
+                            <div class="logo-img"  id="section3-a">
+                                <img src="img/third.png" />
+                                <span>RECOMMENDATION</span>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
 
-    <div class="section-container row">
+            <div class="section-container col-sm-9 col-lg-10">
+            </div>
+        </div>
     </div>
 </body>
 </html>
