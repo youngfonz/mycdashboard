@@ -57,8 +57,8 @@ function dashboard2_chart() {
                         }],
                         yAxes: [{
                             ticks: {
-                                max: 1000,
-                                min: -1000,
+                                max: 800,
+                                min: -1200,
                                 stepSize: 100,
                                 beginAtZero: true
                             },
@@ -164,9 +164,9 @@ function dashboard2_chart() {
                         }],
                         yAxes: [{
                             ticks: {
-                                max: 2700,
+                                max: 3200,
                                 min: 0,
-                                stepSize: 100
+                                stepSize: 200
                             },
                             gridLines: {
                                 color: "rgba(100, 100, 100, 0.1)",
