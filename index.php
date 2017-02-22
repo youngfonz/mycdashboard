@@ -54,7 +54,7 @@
                         </li>
                         <li class="navbar-item active-text">
                              <div class="logo-img" id="section2-a">
-                                <img src="img/second_selected.png.png" />
+                                <img src="img/second.png" />
                                 <span>ENGAGEMENT</span>
                             </div>
                         </li>
