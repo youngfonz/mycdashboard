@@ -55,13 +55,13 @@
                         <li class="navbar-item active-text">
                              <div class="logo-img" id="section2-a">
                                 <img src="img/first.png" />
-                                <span>SENTIMENT</span>
+                                <span>ENGAGEMENT</span>
                             </div>
                         </li>
                         <li class="navbar-item">
                             <div class="logo-img"  id="section1-a">
                                 <img src="img/second_selected.png" />
-                                <span>ENGAGEMENT</span>
+                                <span>SENTIMENT</span>
                             </div>
                         </li>
                         <li class="navbar-item">
