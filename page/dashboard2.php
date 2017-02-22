@@ -36,7 +36,7 @@
         <div class="heading col-md-12">
             <div class="heading-score div-left">
                 <div class="div-left">
-                    <span class="yello-text">SECTION 1.</span>
+                    <span class="yello-text">SECTION 2.</span>
                     <br/>
                     <strong>SENTIMENT</strong>
                 </div>
