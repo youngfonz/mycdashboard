@@ -13,6 +13,8 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="css/style.css" rel="stylesheet" type="text/css">
 
+    <link rel="icon" href="img/logo.png">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="js/moment.js"></script>
     <script src="js/jquery-numerator.js"></script>
