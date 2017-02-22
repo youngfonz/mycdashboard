@@ -89,7 +89,7 @@
         <div class="dash-panel col-md-12">
             <div>
                 <div class="digit-panel col-md-3">
-                    <div class="panel-title">USERS</div>
+                    <div class="panel-title">REG</div>
                     <span id="digit-user">0</span>
                 </div>
                 <div class="digit-panel col-md-3">
@@ -97,8 +97,8 @@
                     <span id="digit-univie">0</span>
                 </div>
                 <div class="digit-panel col-md-3">
-                    <div class="panel-title"># OF VIDEO</div>
-                    <span id="digit-video">0</span>
+                    <div class="panel-title">#OF EMOJI USERS</div>
+                    <span id="digit-emojiusers">0</span>
                 </div>
                 <div class="digit-panel col-md-3">
                     <div class="panel-title">PAGEVIEWS</div>
@@ -111,9 +111,13 @@
             </div>
 
             <div>
-                <div class="digit-panel-large col-md-6">
+                <div class="digit-panel col-md-6">
                     <div class="panel-title">AVG.SESSION DURATION</div>
-                    <span id="digit-avgsess">00:00:24</span>
+                    <span id="digit-avgsess3">00</span><span>:</span><span id="digit-avgsess2">00</span><span>:</span><span id="digit-avgsess1">00</span>
+                </div>
+                <div class="digit-panel col-md-6">
+                    <div class="panel-title">EMOJI COUNT</div>
+                    <span id="digit-emojicount">0</span>
                 </div>
                 <div class="digit-panel col-md-3">
                     <div class="panel-title"># OF CHATS</div>

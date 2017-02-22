@@ -159,7 +159,23 @@ function load_dashboard1() {
         duration: 2000,
         delimiter: ',',
         rounding: 0,
-        toValue: result[2][1]
+        toValue: 7292
+      });
+
+      $('#digit-univie').numerator({
+        easing: 'linear',
+        duration: 2000,
+        delimiter: ',',
+        rounding: 0,
+        toValue: result['unique_views']
+      });
+
+      $('#digit-page').numerator({
+        easing: 'linear',
+        duration: 2000,
+        delimiter: ',',
+        rounding: 0,
+        toValue: result['page_views']
       });
 
       $('#digit-session').numerator({
@@ -167,7 +183,47 @@ function load_dashboard1() {
         duration: 2000,
         delimiter: ',',
         rounding: 2,
-        toValue: result[4][1]
+        toValue: result['page_session']
+      });
+
+      $('#digit-avgsess1').numerator({
+        easing: 'linear',
+        duration: 2000,
+        delimiter: ',',
+        rounding: 0,
+        toValue: result['session_duration'][0]
+      });
+
+      $('#digit-avgsess2').numerator({
+        easing: 'linear',
+        duration: 2000,
+        delimiter: ',',
+        rounding: 0,
+        toValue: result['session_duration'][1]
+      });
+
+      $('#digit-avgsess3').numerator({
+        easing: 'linear',
+        duration: 2000,
+        delimiter: ',',
+        rounding: 0,
+        toValue: result['session_duration'][2]
+      });
+
+      $('#digit-emojicount').numerator({
+        easing: 'linear',
+        duration: 2000,
+        delimiter: ',',
+        rounding: 0,
+        toValue: result['emoji_count']
+      });
+
+      $('#digit-chat').numerator({
+        easing: 'linear',
+        duration: 2000,
+        delimiter: ',',
+        rounding: 0,
+        toValue: result['chats_count']
       });
 
       $('#digit-chatted').numerator({
@@ -175,9 +231,40 @@ function load_dashboard1() {
         duration: 2000,
         delimiter: ',',
         rounding: 0,
-        toValue: result[0][1]
+        toValue: result['users_chatted']
       });
 
+      $('#digit-share').numerator({
+        easing: 'linear',
+        duration: 2000,
+        delimiter: ',',
+        rounding: 0,
+        toValue: result['shares']
+      });
+
+      $('#digit-sparked').numerator({
+        easing: 'linear',
+        duration: 2000,
+        delimiter: ',',
+        rounding: 0,
+        toValue: result['users_sparked']
+      });
+
+      $('#digit-spark').numerator({
+        easing: 'linear',
+        duration: 2000,
+        delimiter: ',',
+        rounding: 0,
+        toValue: result['sparks']
+      });
+
+       $('#digit-ignit').numerator({
+        easing: 'linear',
+        duration: 2000,
+        delimiter: ',',
+        rounding: 0,
+        toValue: result['ignites']
+      });
     }
   });
 
@@ -189,39 +276,13 @@ function load_dashboard1() {
     toValue: 80
   });
 
-  $('#digit-univie').numerator({
+  $('#digit-emojiusers').numerator({
     easing: 'linear',
     duration: 2000,
     delimiter: ',',
     rounding: 0,
-    toValue: 21
+    toValue: 1009
   });
-
-  $('#digit-video').numerator({
-    easing: 'linear',
-    duration: 2000,
-    delimiter: ',',
-    rounding: 0,
-    toValue: 21
-  });
-
-  $('#digit-page').numerator({
-    easing: 'linear',
-    duration: 2000,
-    delimiter: ',',
-    rounding: 0,
-    toValue: 18672
-  });
-
-  
-  $('#digit-chat').numerator({
-    easing: 'linear',
-    duration: 2000,
-    delimiter: ',',
-    rounding: 0,
-    toValue: 57
-  });
-
 
   $('#digit-pinned').numerator({
     easing: 'linear',
@@ -231,43 +292,11 @@ function load_dashboard1() {
     toValue: 8
   });
 
-  $('#digit-share').numerator({
-    easing: 'linear',
-    duration: 2000,
-    delimiter: ',',
-    rounding: 0,
-    toValue: 82
-  });
-
-  $('#digit-sparked').numerator({
-    easing: 'linear',
-    duration: 2000,
-    delimiter: ',',
-    rounding: 0,
-    toValue: 12
-  });
-
-  $('#digit-spark').numerator({
-    easing: 'linear',
-    duration: 2000,
-    delimiter: ',',
-    rounding: 0,
-    toValue: 60
-  });
-
   $('#digit-ignited').numerator({
     easing: 'linear',
     duration: 2000,
     delimiter: ',',
     rounding: 0,
-    toValue: 3
-  });
-
-  $('#digit-ignit').numerator({
-    easing: 'linear',
-    duration: 2000,
-    delimiter: ',',
-    rounding: 0,
-    toValue: 10
+    toValue: 1
   });
 }
