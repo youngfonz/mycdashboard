@@ -372,23 +372,6 @@ h3{
   float:left;
 }
 
-.digit-panel span, .digit-panel-large span {
-  float: right;
-  font-size: 40px;
-  color: white;
-  margin-top: 20px;
-}
-
-.digit-panel-large {
-  padding: 10px;
-  width: 38.9%;
-  height: 80px;
-  margin: 1% 0.5% 0 0.5%;
-  background-color: rgb(55, 55, 55);
-  float:left;
-  color: rgb(130, 130, 130);
-}
-
 .panel-title {
   position: absolute;
 }
@@ -446,10 +429,6 @@ li.recommend-list::after {
 
   .dash-panel {
     height: 310px;
-  }
-
-  .digit-panel span, .digit-panel-large span {
-    font-size: 35px;
   }
 }
 
@@ -611,15 +590,6 @@ li.recommend-list::after {
 
   .dash-panel {
     height: 620px;
-  }
-
-  .digit-panel span, .digit-panel-large span {
-    margin-top: 25px;
-    font-size: 27px;
-  }
-
-  .digit-panel, .digit-panel-large {
-    width: 49%;
   }
 
   .panel-title {
