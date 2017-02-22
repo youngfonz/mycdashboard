@@ -187,16 +187,16 @@
         <div class="col-md-4">
             <div class="list-header col-md-12">
                 <div class="col-md-12">
-                    <div class="font-size-16">LOCATION</div>
+                    <div class="font-size-16">MOST ENGAGED USER</div>
                 </div>
             </div>
 
             <div class="chat-body col-md-12">
                 <table class="font-size-12 col-md-12">
                     <tr class="chat-header">
-                        <td class="col-md-6">CITY</td>
-                        <td class="col-md-3">SESSIONS</td>
-                        <td class="col-md-3">%SESSIONS</td>
+                        <td class="col-md-6">NAME</td>
+                        <td class="col-md-3"># OF EMOJIS</td>
+                        <td class="col-md-3"># OF CHATS</td>
                     </tr>
                     <?php for($i = 1; $i < count($location); $i++) { ?>
                         <tr>
