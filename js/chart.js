@@ -30,7 +30,7 @@ function dashboard2_chart() {
                 type: 'line',
                 data: {
                     datasets: [{
-                        label: 'Scatter Dataset',
+                        label: '# of Emojis',
                         borderColor: "rgb(150, 150, 150)",
                         borderDash: [5,5],
                         pointBackgroundColor: "rgb(150, 150, 150)",
@@ -83,7 +83,7 @@ function dashboard2_chart() {
                 type: 'line',
                 data: {
                     datasets: [{
-                        label: 'Scatter Dataset',
+                        label: '# of Chats',
                         borderColor: "rgb(150, 150, 150)",
                         borderDash: [5,5],
                         pointBackgroundColor: "rgb(150, 150, 150)",
@@ -136,7 +136,7 @@ function dashboard2_chart() {
                 type: 'line',
                 data: {
                     datasets: [{
-                        label: 'Scatter Dataset',
+                        label: 'Total # of Emojis',
                         borderColor: "rgb(150, 150, 150)",
                         borderDash: [5,5],
                         pointBackgroundColor: "rgb(150, 150, 150)",
@@ -205,7 +205,7 @@ function dashboard1_chart() {
                 type: 'line',
                 data: {
                     datasets: [{
-                        label: 'Scatter Dataset',
+                        label: '# of Concurrent Viewers',
                         borderColor: "rgb(150, 150, 150)",
                         borderDash: [4,5],
                         pointBackgroundColor: "rgb(150, 150, 150)",
