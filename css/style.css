@@ -128,7 +128,7 @@ h3{
   padding-bottom: 100px;
 }
 
-.nav-tabs>li.active>a:focus, .chart-area .nav-tabs > li > a {
+.nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover, .chart-area .nav-tabs > li > a {
   background: none;
   color: white;
   border-color: rgb(23, 25, 30);
