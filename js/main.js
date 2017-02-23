@@ -154,6 +154,14 @@ function load_dashboard1() {
     url: "dashboard1_scores.php",
     dataType: "JSON",
     success: function(result) {
+      $('.large-score').numerator({
+        easing: 'linear',
+        duration: 2000,
+        delimiter: ',',
+        rounding: 0,
+        toValue: result['unique_views'] / 3000 * 100
+      });
+
       $('#digit-user').numerator({
         easing: 'linear',
         duration: 2000,
@@ -168,6 +176,14 @@ function load_dashboard1() {
         delimiter: ',',
         rounding: 0,
         toValue: result['unique_views']
+      });
+
+      $('#digit-emojiusers').numerator({
+        easing: 'linear',
+        duration: 2000,
+        delimiter: ',',
+        rounding: 0,
+        toValue: result['stats_data'][2][1  ]
       });
 
       $('#digit-page').numerator({
@@ -272,22 +288,6 @@ function load_dashboard1() {
         toValue: result['ignites']
       });
     }
-  });
-
-  $('.large-score').numerator({
-    easing: 'linear',
-    duration: 2000,
-    delimiter: ',',
-    rounding: 0,
-    toValue: 80
-  });
-
-  $('#digit-emojiusers').numerator({
-    easing: 'linear',
-    duration: 2000,
-    delimiter: ',',
-    rounding: 0,
-    toValue: 1009
   });
 
   $('#digit-pinned').numerator({

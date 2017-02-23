@@ -8,7 +8,7 @@
     $ignited = array();
     
     foreach($data as $row) {
-        $row[3] = calc_time_diff($row);
+        $row[3] = calc_time($row);
         if($row[6] > 0){
             array_push($sparked, $row);
         }
@@ -17,17 +17,13 @@
         }
     }
 
-    function calc_time_diff($row) {
+    function calc_time($row) {
         $UNIX_DATE = ($row[3] - 25569) * 86400;
-        $start_date = gmdate("d-m-Y H:i:s", $UNIX_DATE);
-        $UNIX_DATE = ($row[4] - 25569) * 86400;
-        $end_date = gmdate("d-m-Y H:i:s", $UNIX_DATE);
-        $i = strtotime($end_date);
-        $j = strtotime($start_date);
-        $diff = $i-$j;
-        $sec = $diff % 60;
-        $min = ($diff - $sec) / 60;
-        return $min.":".$sec;
+        $tz = new DateTimeZone('America/Los_Angeles');
+        $time = gmdate("d-m-Y H:i:s", $UNIX_DATE);
+        $datetime = new DateTime($time);
+        $datetime->setTimezone($tz);
+        return $datetime->format('Y-m-d H:i:s');
     }
 ?>
 
