@@ -372,6 +372,13 @@ h3{
   float:left;
 }
 
+.digit-panel span {
+  float: right;
+  font-size: 40px;
+  color: white;
+  margin-top: 20px;
+}
+
 .panel-title {
   position: absolute;
 }
@@ -441,6 +448,9 @@ li.recommend-list::after {
     height: 35px;
   }
 
+  .digit-panel span {
+    font-size: 35px;
+  }
   .btn-yellow strong {
     display: none;
   }
@@ -601,6 +611,11 @@ li.recommend-list::after {
   }
   .section1 .part3 .col-md-4 {
     padding-right: 0;
+  }
+
+  .digit-panel span {
+    margin-top: 25px;
+    font-size: 27px;
   }
 
   .section3 .part2 ol {
