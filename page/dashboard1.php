@@ -4,8 +4,24 @@
     $xlsx = new XLSXReader('optum_stream_full.xlsx');
 
     $browser = $xlsx->getSheetData('OS Browser Usage');
-    $location = $xlsx->getSheetData('Chat Pivot');  
+    $chat_pivot = $xlsx->getSheetData('Chat Pivot');
+    $row_chat = $xlsx->getSheetData('Raw Chats');
+    foreach($chat_pivot as $row) {
+        
+    }
     $engagement_activity = $xlsx->getSheetData('Engagement');
+    
+    function get_avg_sentiment($val, $array) {
+        $sum = 0;
+        $count = 0;
+        foreach($array as $row) {
+            if($row[12] == $val) {
+                $sum += $row[11];
+                $count++;
+            }
+        }
+        return $sum / $count;
+    }
 ?>
 
 <div class="section1">
@@ -199,14 +215,14 @@
                 <table class="font-size-12 col-md-12">
                     <tr class="chat-header">
                         <td class="col-md-6">NAME</td>
-                        <td class="col-md-3"># OF EMOJIS</td>
                         <td class="col-md-3"># OF CHATS</td>
+                        <td class="col-md-3">Avg Sentiment</td>
                     </tr>
-                    <?php for($i = 1; $i < count($location); $i++) { ?>
+                    <?php for($i = 3; $i < count($chat_pivot) - 1; $i++) { ?>
                         <tr>
-                            <td class="col-md-6"><?php echo $i.$location[$i][1];?></td>
-                            <td class="col-md-3">72</td>
-                            <td class="col-md-3">36</td>
+                            <td class="col-md-6"><?php echo $chat_pivot[$i][0];?></td>
+                            <td class="col-md-3"><?php echo $chat_pivot[$i][1];?></td>
+                            <td class="col-md-3"><?php echo round(get_avg_sentiment($chat_pivot[$i][0], $row_chat), 2);?></td>
                         </tr>
                     <?php }?>
                 </table>
