@@ -209,6 +209,12 @@ function load_dashboard1() {
         rounding: 0,
         toValue: result['session_duration'][2]
       });
+      if(result['session_duration'][1] < 10) {
+        setTimeout(function(){ $('#digit-avgsess2').text("0" + result['session_duration'][1].toString());}, 2001);
+      }
+      if(result['session_duration'][2] < 10) {
+        $('#digit-avgsess3').text("0" + result['session_duration'][1].toString());
+      }
 
       $('#digit-emojicount').numerator({
         easing: 'linear',

@@ -89,7 +89,7 @@
         <div class="dash-panel col-md-12">
             <div>
                 <div class="digit-panel col-md-3">
-                    <div class="panel-title">REG</div>
+                    <div class="panel-title">REGISTERED USERS</div>
                     <span id="digit-user">0</span>
                 </div>
                 <div class="digit-panel col-md-3">

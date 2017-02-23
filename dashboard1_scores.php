@@ -41,7 +41,7 @@
     }
 
     $chat_pivot = $xlsx->getSheetData('Chat Pivot');
-    $users_chatted = $chat_pivot[count($chat_pivot)-1][1];
+    $users_chatted = count($chat_pivot) - 4;
 
     $raw_chat = $xlsx->getSheetData('Raw Chats');
     $shares = 0;
