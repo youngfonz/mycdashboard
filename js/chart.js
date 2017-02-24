@@ -180,8 +180,6 @@ function dashboard2_chart() {
             });
         }
     });
-
-    var tooltip = $('#tooltip');
 }
 
 function dashboard1_chart() {

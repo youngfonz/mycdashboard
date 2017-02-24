@@ -623,3 +623,9 @@ li.recommend-list::after {
     height: auto;
   }
 }
+
+.c-rating__item {
+  float: left;
+  list-style: none;
+  width: 25px;
+}

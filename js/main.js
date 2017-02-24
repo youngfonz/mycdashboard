@@ -146,6 +146,23 @@ function load_dashboard2() {
     $('.sparked-chats').show();
     $('.sparked-a').addClass("active");
   });
+
+  var maxRating = 5;
+  var video_el = document.querySelector("#recent_video_rating");
+  var video_current = 0;
+  var callback = function(rating){ };
+
+  var emoji_el = document.querySelector("#emoji_rating");
+  var emoji_rating = rating(emoji_el, video_current, maxRating, callback);
+
+  var chat_el = document.querySelector("#chat_rating");
+  var chat_rating = rating(chat_el, video_current, maxRating, callback);
+
+  var emojis_el = document.querySelector("#emojis_rating");
+  var emojis_rating = rating(emojis_el, video_current, maxRating, callback);
+
+  var rawchat_el = document.querySelector("#rawchat_rating");
+  var rawchat_rating = rating(rawchat_el, video_current, maxRating, callback);
 }
 
 function load_dashboard1() {
@@ -305,4 +322,22 @@ function load_dashboard1() {
     rounding: 0,
     toValue: 1
   });
+
+  var maxRating = 5;
+  var video_el = document.querySelector("#recent_video_rating");
+  var video_current = 0;
+  var callback = function(rating){ };
+  var video_rating = rating(video_el, video_current, maxRating, callback);
+
+  var stream_el = document.querySelector("#recent_stream_rating");
+  var stream_rating = rating(stream_el, video_current, maxRating, callback);
+
+  var viewers_el = document.querySelector("#viewers_rating");
+  var viewers_rating = rating(viewers_el, video_current, maxRating, callback);
+
+  var browser_el = document.querySelector("#browser_rating");
+  var browser_rating = rating(browser_el, video_current, maxRating, callback);
+
+  var engaged_el = document.querySelector("#engaged_rating");
+  var engaged_rating = rating(engaged_el, video_current, maxRating, callback);
 }

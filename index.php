@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/ratings.css" rel="stylesheet" type="text/css">
     <link href="css/style.css" rel="stylesheet" type="text/css">
 
     <link rel="icon" href="img/logo.png">
@@ -21,6 +22,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/chart.min.js"></script>
     <script src="js/chart.js"></script>
+    <script src="js/ratings.js"></script>
     <script src="js/main.js"></script>
 </head>
 <body>

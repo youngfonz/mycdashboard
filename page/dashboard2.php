@@ -59,15 +59,15 @@
 
             <div class="tab-content">
                 <div id="chart1" class="tab-pane fade in active">
-                    <h3>Emoji Sentiment</h3>
+                    <h3>Emoji Sentiment<div id="emoji_rating" class="div-right"></div></h3>
                     <canvas id="emoji_delta" class="chart col-md-12"></canvas>
                 </div>
                 <div id="chart2" class="tab-pane fade">
-                    <h3>Chats</h3>
+                    <h3>Chats<div id="chat_rating" class="div-right"></div></h3>
                     <canvas id="chatchart" class="chart col-md-12"></canvas>
                 </div>
                 <div id="chart3" class="tab-pane fade">
-                    <h3>Emojis</h3>
+                    <h3>Emojis<div id="emojis_rating" class="div-right"></div></h3>
                     <canvas id="emojichart" class="chart col-md-12"></canvas>
                 </div>
             </div>
@@ -96,14 +96,6 @@
                 </div>
             </div>
         </div>
-        <div id="tooltip">
-            <span>
-                @javier.sampedro
-            </span>
-            <span>
-                If you have questions during the town hall, start asking them. We will ask them during the Q&A time
-            </span>
-        </div>
     </div>
 
     <div class="part2 col-md-12">
@@ -111,6 +103,7 @@
             <div class="col-md-12">
                 <div class="font-size-16 active ignited-a">IGNITED CHATS</div>
                 <div class="font-size-16 sparked-a">SPARKED CHATS</div>
+                <div id="rawchat_rating" class="div-right"></div>
             </div>
         </div>
         <div class="list-body col-md-12">

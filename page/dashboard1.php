@@ -49,6 +49,7 @@
             <div class="list-header col-md-12">
                 <div class="col-md-12">
                     <div class="font-size-16">RECENT VIDEO ON DEMAND ACTIVITY</div>
+                    <div id="recent_video_rating" class="div-right"></div>
                 </div>
             </div>
             <div class="chat-recent chat-body col-md-12">
@@ -73,6 +74,7 @@
             <div class="list-header col-md-12">
                 <div class="col-md-12">
                     <div class="font-size-16">RECENT LIVE STREAM ACTIVITY</div>
+                    <div id="recent_stream_rating" class="div-right"></div>
                 </div>
             </div>
             <div class="chat-recent chat-body col-md-12">
@@ -97,7 +99,7 @@
     <div class="part2 col-md-12">
         <div class="chart-area">
             <div id="chart1" class="tab-pane fade in active">
-                <h3>Viewers</h3>
+                <h3>Viewers<div id="viewers_rating" class="div-right"></div></h3>
                 <canvas id="view_chart" class="chart col-md-12"></canvas>
             </div>
         </div>
@@ -179,6 +181,7 @@
             <div class="list-header col-md-12">
                 <div class="col-md-12">
                     <div class="font-size-16">BROWSER</div>
+                    <div id="browser_rating" class="div-right"></div>
                 </div>
             </div>
 
@@ -208,6 +211,7 @@
             <div class="list-header col-md-12">
                 <div class="col-md-12">
                     <div class="font-size-16">MOST ENGAGED USER</div>
+                    <div id="engaged_rating" class="div-right"></div>
                 </div>
             </div>
 
