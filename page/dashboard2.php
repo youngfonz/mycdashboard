@@ -19,7 +19,7 @@
 
     function calc_time($row) {
         $UNIX_DATE = ($row[3] - 25569) * 86400;
-        $tz = new DateTimeZone('America/Los_Angeles');
+        $tz = new DateTimeZone('America/Denver');
         $time = gmdate("d-m-Y H:i:s", $UNIX_DATE);
         $datetime = new DateTime($time);
         $datetime->setTimezone($tz);
